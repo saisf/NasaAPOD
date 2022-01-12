@@ -30,18 +30,21 @@ class TimeHelper {
     }
     
     func checkUserLocalTimeIsAheadOfNasaPostingTime() -> Bool {
-        let formatter = DateFormatter()
-        formatter.timeZone = TimeZone(abbreviation: "EST")
-        formatter.setLocalizedDateFormatFromTemplate("yyyy-MM-dd")
-        let usTimeString = formatter.string(from: Date())
+        let usDateformatter = DateFormatter()
+        let dateFormatString = "dd"
+        usDateformatter.timeZone = TimeZone(abbreviation: "EST")
+        usDateformatter.setLocalizedDateFormatFromTemplate("yyyy-MM-dd")
+        let usTimeString = usDateformatter.string(from: Date())
+        let localDateFormatter = DateFormatter()
         
-        guard let usTime = formatter.date(from: usTimeString) else {
+        guard let usTime = usDateformatter.date(from: usTimeString) else {
             return false
         }
         
-        formatter.dateFormat = "dd"
-        let usDay = formatter.string(from: usTime)
-        let localTimeDay = formatter.string(from: Date())
+        usDateformatter.dateFormat = dateFormatString
+        localDateFormatter.dateFormat = dateFormatString
+        let usDay = usDateformatter.string(from: usTime)
+        let localTimeDay = localDateFormatter.string(from: Date())
         
         return (Date() > usTime) && (usDay != localTimeDay)
     }
