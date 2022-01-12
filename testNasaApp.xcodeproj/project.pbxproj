@@ -17,6 +17,8 @@
 		AC2A09E0278D606C009063CA /* testNasaAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2A09DF278D606C009063CA /* testNasaAppTests.swift */; };
 		AC2A09EA278D606C009063CA /* testNasaAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2A09E9278D606C009063CA /* testNasaAppUITests.swift */; };
 		AC2A09EC278D606C009063CA /* testNasaAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2A09EB278D606C009063CA /* testNasaAppUITestsLaunchTests.swift */; };
+		AC2A09FE278F0D81009063CA /* Apod.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2A09FD278F0D81009063CA /* Apod.swift */; };
+		AC2A0A02278F0DF4009063CA /* TimeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2A0A01278F0DF4009063CA /* TimeHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		AC2A09E5278D606C009063CA /* testNasaAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = testNasaAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC2A09E9278D606C009063CA /* testNasaAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testNasaAppUITests.swift; sourceTree = "<group>"; };
 		AC2A09EB278D606C009063CA /* testNasaAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testNasaAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		AC2A09FD278F0D81009063CA /* Apod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apod.swift; sourceTree = "<group>"; };
+		AC2A0A01278F0DF4009063CA /* TimeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,9 +105,11 @@
 		AC2A09C4278D606A009063CA /* testNasaApp */ = {
 			isa = PBXGroup;
 			children = (
+				AC2A09FC278F0D6A009063CA /* Models */,
+				AC2A09FF278F0DB1009063CA /* Controllers */,
+				AC2A0A00278F0DDA009063CA /* Helpers */,
 				AC2A09C5278D606A009063CA /* AppDelegate.swift */,
 				AC2A09C7278D606A009063CA /* SceneDelegate.swift */,
-				AC2A09C9278D606A009063CA /* ViewController.swift */,
 				AC2A09CB278D606A009063CA /* Main.storyboard */,
 				AC2A09D1278D606C009063CA /* Assets.xcassets */,
 				AC2A09D3278D606C009063CA /* LaunchScreen.storyboard */,
@@ -128,6 +134,30 @@
 				AC2A09EB278D606C009063CA /* testNasaAppUITestsLaunchTests.swift */,
 			);
 			path = testNasaAppUITests;
+			sourceTree = "<group>";
+		};
+		AC2A09FC278F0D6A009063CA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AC2A09FD278F0D81009063CA /* Apod.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AC2A09FF278F0DB1009063CA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AC2A09C9278D606A009063CA /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		AC2A0A00278F0DDA009063CA /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				AC2A0A01278F0DF4009063CA /* TimeHelper.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,6 +293,8 @@
 			files = (
 				AC2A09D0278D606A009063CA /* testNasaApp.xcdatamodeld in Sources */,
 				AC2A09CA278D606A009063CA /* ViewController.swift in Sources */,
+				AC2A0A02278F0DF4009063CA /* TimeHelper.swift in Sources */,
+				AC2A09FE278F0D81009063CA /* Apod.swift in Sources */,
 				AC2A09C6278D606A009063CA /* AppDelegate.swift in Sources */,
 				AC2A09C8278D606A009063CA /* SceneDelegate.swift in Sources */,
 			);
@@ -371,7 +403,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -426,7 +458,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -449,8 +481,10 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -477,8 +511,10 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

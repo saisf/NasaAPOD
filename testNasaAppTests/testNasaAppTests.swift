@@ -9,25 +9,36 @@ import XCTest
 @testable import testNasaApp
 
 class testNasaAppTests: XCTestCase {
+    
+    var timeHelper: TimeHelper!
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        timeHelper = TimeHelper()
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        TimeZone.ReferenceType.resetSystemTimeZone()
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testTimeHelperDateToString() throws {
+        let stringDate = "2022-01-12"
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        guard let testDate = formatter.date(from: stringDate) else {
+            return
         }
+        XCTAssertEqual(timeHelper.dateToString(date: testDate), stringDate)
+    }
+    
+    func testTimeHelperStringToDateString() throws {
+        let stringDate = "2022-01-12"
+        let expectedResult = "Jan 12, 2022"
+        XCTAssertEqual(timeHelper.stringToDateString(string: stringDate), expectedResult)
+    }
+    
+    func testEastCoastLocalTimeIsNotAheadOfNasaPostingTime() throws {
+        TimeZone.ReferenceType.default = TimeZone(abbreviation: "EST")!
+        XCTAssertFalse(timeHelper.checkUserLocalTimeIsAheadOfNasaPostingTime())
     }
 
 }

@@ -1,24 +1,125 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="testNasaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j1l-TI-ygr">
+                                <rect key="frame" x="25" y="64" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <color key="textColor" name="customColorSupportDarkMode"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="WtP-tz-c4S">
+                                <rect key="frame" x="50" y="64" width="339" height="31"/>
+                                <connections>
+                                    <action selector="datePickerSelected:" destination="BYZ-38-t0r" eventType="valueChanged" id="Dp4-iU-6zm"/>
+                                </connections>
+                            </datePicker>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ipe-9Y-Nkm">
+                                <rect key="frame" x="25" y="94" width="364" height="463"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZZz-sP-YPZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="364" height="463"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
+                                        </accessibility>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstItem="ZZz-sP-YPZ" firstAttribute="centerY" secondItem="ipe-9Y-Nkm" secondAttribute="centerY" id="5LW-Cm-7Wm"/>
+                                    <constraint firstItem="ZZz-sP-YPZ" firstAttribute="width" secondItem="ipe-9Y-Nkm" secondAttribute="width" id="UCF-n7-TCj"/>
+                                    <constraint firstItem="ZZz-sP-YPZ" firstAttribute="centerX" secondItem="ipe-9Y-Nkm" secondAttribute="centerX" id="spt-Kj-yff"/>
+                                    <constraint firstItem="ZZz-sP-YPZ" firstAttribute="height" secondItem="ipe-9Y-Nkm" secondAttribute="height" id="uJj-dC-mAe"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tHW-sd-7r4">
+                                <rect key="frame" x="25" y="567" width="364" height="0.0"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <color key="textColor" name="customColorSupportDarkMode"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LCV-va-Nhb">
+                                <rect key="frame" x="25" y="577" width="364" height="0.0"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                <color key="textColor" name="customColorSupportDarkMode"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NPS-1K-aXB">
+                                <rect key="frame" x="521" y="118" width="306" height="250"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="Pqp-V1-ekg"/>
+                                </constraints>
+                                <color key="textColor" name="customColorSupportDarkMode"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ipe-9Y-Nkm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="0FL-st-BLv"/>
+                            <constraint firstItem="ipe-9Y-Nkm" firstAttribute="top" secondItem="j1l-TI-ygr" secondAttribute="bottom" constant="30" id="5Sa-wc-cNi"/>
+                            <constraint firstItem="j1l-TI-ygr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="9Wq-gn-eK2"/>
+                            <constraint firstItem="WtP-tz-c4S" firstAttribute="leading" secondItem="j1l-TI-ygr" secondAttribute="trailing" constant="25" id="9cB-QY-cAw"/>
+                            <constraint firstItem="ipe-9Y-Nkm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="F7v-qn-0lw"/>
+                            <constraint firstItem="tHW-sd-7r4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IrO-hl-BNr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="NPS-1K-aXB" secondAttribute="bottom" constant="25" id="RM5-eF-Os1"/>
+                            <constraint firstItem="LCV-va-Nhb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="S2S-d6-5Qu"/>
+                            <constraint firstItem="WtP-tz-c4S" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="T48-09-5YR"/>
+                            <constraint firstItem="LCV-va-Nhb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UTK-Gb-nw1"/>
+                            <constraint firstItem="tHW-sd-7r4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="bDX-tv-YyJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WtP-tz-c4S" secondAttribute="trailing" constant="25" id="bG4-C5-7Xw"/>
+                            <constraint firstItem="NPS-1K-aXB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fV5-wg-4tF"/>
+                            <constraint firstItem="NPS-1K-aXB" firstAttribute="top" secondItem="LCV-va-Nhb" secondAttribute="bottom" constant="10" id="jYx-CM-hJP"/>
+                            <constraint firstItem="tHW-sd-7r4" firstAttribute="top" secondItem="ipe-9Y-Nkm" secondAttribute="bottom" constant="10" id="jd0-Xl-gGl"/>
+                            <constraint firstItem="LCV-va-Nhb" firstAttribute="top" secondItem="tHW-sd-7r4" secondAttribute="bottom" constant="10" id="n6K-8I-NJv"/>
+                            <constraint firstItem="NPS-1K-aXB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="oe6-B1-Ijk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ipe-9Y-Nkm" secondAttribute="trailing" constant="25" id="taj-a5-C9s"/>
+                            <constraint firstItem="j1l-TI-ygr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="uqd-Ve-qvr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NPS-1K-aXB" secondAttribute="trailing" constant="25" id="zDN-QM-Fe5"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="apodDate" destination="LCV-va-Nhb" id="HgL-ZH-9jv"/>
+                        <outlet property="apodExplanation" destination="NPS-1K-aXB" id="D18-rs-HNu"/>
+                        <outlet property="apodImage" destination="ZZz-sP-YPZ" id="tMZ-86-CCM"/>
+                        <outlet property="apodTitle" destination="tHW-sd-7r4" id="5wS-UO-58o"/>
+                        <outlet property="containerView" destination="ipe-9Y-Nkm" id="D33-lj-Bpi"/>
+                        <outlet property="datePicker" destination="WtP-tz-c4S" id="YcL-NJ-rT5"/>
+                        <outlet property="todayApodTitle" destination="j1l-TI-ygr" id="JG0-fi-WwI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="18.75" y="40.579710144927539"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="customColorSupportDarkMode">
+            <color red="0.052000001072883606" green="0.052000001072883606" blue="0.052000001072883606" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
